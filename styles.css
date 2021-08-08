@@ -1,0 +1,82 @@
+body {
+  font-family: Arial;
+}
+
+.paises {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #e8e8e8;
+}
+
+#boton-favoritos {
+  color: black;
+  width: auto;
+  margin-top: 20px;
+}
+
+#boton-volver {
+  padding: 5px 15px;
+  margin-left: 5px;
+}
+
+#pais-seleccionado {
+  display: none;
+  margin-left: auto;
+  margin-right: auto;
+  width: 20em;
+}
+
+#region,
+#moneda,
+#idioma {
+  padding: 5px 10px;
+  height: 42px;
+  -webkit-appearance: none;
+  height: 34px;
+  cursor: pointer;
+}
+
+#detalles-pais-seleccionado {
+  display: block;
+  margin-top: 20px;
+  justify-content: space-between;
+}
+
+#imagen-pais-seleccionado {
+  width: 400px;
+  height: 200px;
+}
+
+.paises h2 {
+  cursor: pointer;
+}
+
+.paises h2:hover:after,
+.paises h2.favorito:after {
+  /* Estrella rellena */
+  content: " \2605";
+  color: #f2b01e;
+}
+
+.paises h2.favorito:hover:after {
+  /* Estrella sin rellenar */
+  content: " \2730";
+}
+
+@media (max-width: 540px) {
+  #imagen-pais-seleccionado {
+    width: 100%;
+  }
+  #mapa {
+    width: 300px !important;
+  }
+  #idioma,
+  #moneda {
+    margin-top: 10px;
+    margin-left: 0px !important;
+  }
+}

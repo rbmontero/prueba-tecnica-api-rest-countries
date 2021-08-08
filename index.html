@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prueba Técnica - API REST Countries</title>
+
+  <!-- estilos -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="styles.css" rel="stylesheet">
+
+  <!-- scripts -->
+  <script src="main.js" defer></script>
+</head>
+
+<body>
+
+  <div class="input-group" style="width: 50%; margin: 50px auto">
+    <!-- La busqueda se realiza al pulsar el boton o la tecla enter -->
+    <input type="text" id="barra-buscar" class="form-control" placeholder="Introduzca un criterio de búsqueda en inglés"
+      onkeydown="if (event.keyCode == 13) document.getElementById('boton-buscar').click()">
+    <div class="input-group-append">
+      <button class="btn btn-primary" id="boton-buscar">Buscar</button>
+    </div>
+  </div>
+
+  <div class="col text-center" id="linea-filtros" style="margin-top: -30px;">
+    <select name="region" id="region">
+      <option value="" selected>Filtrar por región</option>
+      <option value="Africa">Africa</option>
+      <option value="Americas">America</option>
+      <option value="Asia">Asia</option>
+      <option value="Europe">Europa</option>
+      <option value="Oceania">Oceania</option>
+    </select>
+
+    <select name="moneda" id="moneda" style="margin-left: 20px;">
+      <option value="" selected>Filtrar por moneda</option>
+      <option value="EUR">Euro</option>
+      <option value="USD">Dolar americano</option>
+      <option value="CAD">Dolar canadiense</option>
+      <option value="AUD">Dolar australiano</option>
+      <option value="GBP">Libra</option>
+      <option value="CHF">Franco</option>
+      <option value="JPY">Yen</option>
+    </select>
+
+    <select name="idioma" id="idioma" style="margin-left: 20px;">
+      <option value="" selected>Filtrar por idioma</option>
+      <option value="es">Español</option>
+      <option value="eng">Inglés</option>
+      <option value="ru">Ruso</option>
+      <option value="zh">Chino</option>
+      <option value="hi">Hindi</option>
+      <option value="fr">Francés</option>
+      <option value="ar">Árabe</option>
+      <option value="pt">Portugués</option>
+    </select>
+  </div>
+
+  <div class="col text-center">
+    <button class="btn btn-outline-warning" id="boton-favoritos">Ver favoritos</button>
+  </div>
+
+  <section id="lista-de-paises" class="paises"></section>
+
+  <div id="pais-seleccionado" class="container">
+    <button class="btn btn-dark" id="boton-volver">Volver a la lista</button>
+    <div id="detalles-pais-seleccionado">
+      <div id="informacionPais"></div>
+    </div>
+  </div>
+
+</body>
+
+</html>
